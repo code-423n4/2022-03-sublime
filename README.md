@@ -31,7 +31,7 @@ The main focus of this audit are the first two contracts, which is a new type of
 The third contract is a verifier used to verify user's Twitter IDs. Verification involves a combination of on-chain and off-chain steps. A basic overview is:
 
 1. User requests verification
-2. User posts a tweet containing a signde message
+2. User posts a tweet containing a signed message
 3. Verification of the signed message occurs off-chain using a bot
 4. If the message is successfully verified, user executes a transaction that finally adds their details to the contract
 
@@ -66,3 +66,5 @@ We rely primarily on Chainlink price feeds, but for assets for which price feeds
 **6. The system configuration of all the contracts including all the global variables and system parameters are assumed the be deployed without anyone able to frontrun**
 
 Cases of frontrunning initializations can be handled by redeploying the contracts.
+
+**7. In cases where a verification by a verifier is revoked in the middle of an active loan, the loan can be terminated prematurely by the admin**
