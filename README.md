@@ -26,7 +26,7 @@ The scope includes the following files, which are a part of [0.0.7 release](http
 - [sublime-v1/contracts/PooledCreditLine/LenderPool.sol](https://github.com/sublime-finance/sublime-v1/blob/46536a6d25df4264c1b217bd3232af30355dcb95/contracts/PooledCreditLine/LenderPool.sol)
 - [sublime-v1/contracts/Verification/twitterVerifier.sol](https://github.com/sublime-finance/sublime-v1/blob/46536a6d25df4264c1b217bd3232af30355dcb95/contracts/Verification/twitterVerifier.sol)
 
-The main focus of this audit are the first two contracts, which is a new type of loan product we're introducing called Pooled Credit Lines. Pooled Credit Lines allow the creation of generalized loan offerings. It allows a borrower to raise a line of credit from multiple lenders. Capital from lenders is pooled together, and any unused capital is supplied onto a savings strategy chosen during the creation of the loan. Participation of lenders in the loan can be restricted by the borrower by choosing a verifier that matches their requirements. There are no fixed repayment schedules for borrowers - instead soft agreements on fixed repayment schedules can be made off-chain between the borrower and the lenders. This allows flexibility to the borrower in case they cannot make a repayment by a hard deadline - at the same time, repeated failures to meet the soft deadlines would reflect badly on the borroewr's future borrowing prospects.
+The main focus of this audit are the first two contracts, which is a new type of loan product we're introducing called Pooled Credit Lines. Pooled Credit Lines allow the creation of generalized loan offerings. It allows a borrower to raise a line of credit from multiple lenders. Capital from lenders is pooled together, and any unused capital is supplied onto a savings strategy chosen during the creation of the loan. Participation of lenders in the loan can be restricted by the borrower by choosing a verifier that matches their requirements.
 
 The third contract is a verifier used to verify user's Twitter IDs. Verification involves a combination of on-chain and off-chain steps. A basic overview is:
 
@@ -34,6 +34,8 @@ The third contract is a verifier used to verify user's Twitter IDs. Verification
 2. User posts a tweet containing a signde message
 3. Verification of the signed message occurs off-chain using a bot
 4. If the message is successfully verified, user executes a transaction that finally adds their details to the contract
+
+Additional details (overview as well as technical spec) can be found in our [documentation](https://docs.sublime.finance/). 
 
 # Assumptions / Design choices
 
