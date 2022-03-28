@@ -68,3 +68,5 @@ We rely primarily on Chainlink price feeds, but for assets for which price feeds
 Cases of frontrunning initializations can be handled by redeploying the contracts.
 
 **7. In cases where a verification by a verifier is revoked in the middle of an active loan, the loan can be terminated prematurely by the admin**
+
+**8. The PooledCreditLine.sol contract exceeds the contract code size under the current release. This issue has been fixed, although the fix is not ready for this release**
