@@ -26,7 +26,7 @@ The scope includes the following files, which are a part of [0.0.7 release](http
 - [sublime-v1/contracts/PooledCreditLine/LenderPool.sol](https://github.com/sublime-finance/sublime-v1/blob/46536a6d25df4264c1b217bd3232af30355dcb95/contracts/PooledCreditLine/LenderPool.sol)
 - [sublime-v1/contracts/Verification/twitterVerifier.sol](https://github.com/sublime-finance/sublime-v1/blob/46536a6d25df4264c1b217bd3232af30355dcb95/contracts/Verification/twitterVerifier.sol)
 
-The main focus of this audit are the first two contracts, which is a new type of loan product we're introducing called Pooled Credit Lines. Pooled Credit Lines allow the creation of generalized loan offerings. It allows a borrower to raise a line of credit from multiple lenders. Capital from lenders is pooled together, and any unused capital is supplied onto a savings strategy chosen during the creation of the loan. Participation of lenders in the loan can be restricted by the borrower by choosing a verifier that matches their requirements.
+The main focus of this audit are the first two contracts, which is a new type of loan product we're introducing called Pooled Credit Lines. Pooled Credit Lines allow the creation of generalized loan offerings. It allows a borrower to raise a line of credit from multiple lenders. Capital from lenders is pooled together, and any unused capital is supplied onto a passive yield strategy such as Compound chosen during the creation of the loan. Participation of lenders in the loan can be restricted by the borrower by choosing a verifier that matches their requirements.
 
 The third contract is a verifier used to verify user's Twitter IDs. Verification involves a combination of on-chain and off-chain steps. All verifiers involve the following general flow:
 
