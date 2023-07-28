@@ -1,0 +1,160 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-Q1-2022 / ☑sublime-mar29
+==============================================================
+
+[12/08/2021 5:28 PM] itsmetechjay
+👋 Hello and welcome to the contest channel for the $50K USDC **Sublime** contest!
+
+📆 Contest opens December 9, 2021, at 0:00 UTC and runs through December 15, 2021 at 23:59 UTC (7 days).
+
+Please give a warm welcome to the Sublime team - in particular @Ritik | Sublime - who will be available for questions either here in channel or via DM. 
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this contest, consider enabling notifications for this channel. 🐺 ⏰
+
+{Reactions}
+👋 (3) 
+
+[12/08/2021 11:32 PM] Ritik#1677
+Hi all! I'm the founder of sublime.finance. Excited to be sponsoring this contest! I'll be the primary point of contact. Feel free to drop any questions or DM me personally and I'll be happy to help. 
+
+Our docs and tech specs are up at https://docs.sublime.finance/
+
+{Embed}
+https://docs.sublime.finance/
+The social graph for credit
+Code4rena - ARCHIVE-Q1-2022 - ☑sublime-mar29 [918160092224946206].txt_Files/-MjYeVLPLSU9ib2zdLPk-E6F25.png
+
+{Reactions}
+👋 (7) 
+
+[12/09/2021 10:34 AM] Ritik#1677
+Hi all! We've recorded this high-level overview to help you get started with this contest: https://www.youtube.com/watch?v=L8IExC-cT8E
+
+The HD version on Youtube is unfortunately still processing, so in the interest of time we've uploaded a mirror on Dropbox as well: https://www.dropbox.com/s/l8okpnkz41mpsjp/Code%20Arena%20contest.mov?dl=0
+
+{Reactions}
+thankyou (7) 
+
+[12/15/2021 1:35 PM] gzeon
+hey I don't think you should put your alchemy apikey in the repo
+
+{Reactions}
+🤣 (2) 
+
+[12/15/2021 1:40 PM] gzeon
+along with infura and etherscan lol
+
+
+[12/15/2021 5:17 PM] Ritik#1677
+yes, shouldn't have been there :/ thanks for pointing it out!
+
+
+[12/16/2021 12:02 AM] C4
+**🚨 CONTEST ALERT**
+
+@🐺wardens The **Sublime** contest is now closed! Huge thanks to everyone who participated🔍, whether you submitted a finding or not.
+
+What's next: Sublime's team will review the findings over the next couple of days, and then we'll pass them off to the judge. Keep an eye on #📢announcements for regular updates on how the contest is progressing through awarding 🤑🏆, judging 🧑‍⚖️ and reporting 📜. Feel free to ping an organizer if you have questions along the way!
+
+
+[03/28/2022 1:27 PM] itsmetechjay
+👋 Hello and welcome (back) to the contest channel for the** $30K USDC Sublime** contest!
+
+📆 Contest opens March 29, 2022, at 0:00 UTC and runs through March 31, 2022 at 23:59 UTC (3 days).
+
+Please give a warm welcome (back) to the Sublime team - in particular @Ritik | Sublime - who will be available for questions either here in channel or via DM. 
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this contest, consider enabling notifications for this channel. 🐺 ⏰
+
+Contest Page: https://code4rena.com/contests/2022-03-sublime-contest
+
+{Embed}
+https://code4rena.com/contests/2022-03-sublime-contest
+Code4rena Sublime contest
+$30,000 USDC
+29 March 2022—31 March 2022
+Code4rena - ARCHIVE-Q1-2022 - ☑sublime-mar29 [918160092224946206].txt_Files/C4-banner-7C19B.png
+
+{Reactions}
+🥳 
+
+[03/28/2022 6:22 PM] Ritik#1677
+Hey hey! Happy to be back! 😁
+
+{Reactions}
+👋 (6) 🎉 
+
+[03/28/2022 6:22 PM] Ritik#1677
+Feel free to DM me if you have any questions!
+
+
+[03/29/2022 5:07 AM] Ritik#1677
+Hey all, to compile our contracts please run `dapp build` after installing dapp.tools. We missed adding this to our README
+
+
+[03/29/2022 11:53 AM] 3bagsFull#1604
+Hi, @Ritik | Sublime ,  just want to double check on the right branch. I can't find any code in the C4 repo only links to the code in README. The branch name linked to is 46536a6d25. Is this right?
+
+
+[03/29/2022 1:10 PM] Ritik#1677
+Hey @kyliek, yes, the commit used is 46536a6.
+
+the repo at this commit is: https://github.com/sublime-finance/sublime-v1/tree/46536a6d25df4264c1b217bd3232af30355dcb95
+
+
+[03/29/2022 6:44 PM] dirk_y
+Hi, the commit you've listed above doesn't have any of the tests found on master. This makes it much harder to write a PoC in code as we can't piggy back off of the existing test harness/suite. Could you update the branch `0.0.7` tag to include the tests please? (I'll have to describe a PoC step-by-step in the meantime)
+
+{Reactions}
+1️⃣ 
+
+[03/30/2022 3:17 AM] hickuphh3
+under what circumstances will termination be invoked? also, an explanation of what it's intended behaviour is would be great
+
+
+[03/30/2022 5:55 AM] Ritik#1677
+Hi @dirk_y, unfortunately the contract changed slightly on the last day, but the tests couldn't be modified to meet those changes in time for the contest. In order to not confuse people we decided it was best to remove the tests from the final release
+
+
+[03/30/2022 5:58 AM] Ritik#1677
+Termination might be executed in case of malicious activities. For eg, suppose a borrower turns out to have impersonated (or taken over) another account and a verifier wrongly verifies them, the loan can be terminated and collateral repossessed
+
+
+[03/30/2022 6:04 AM] Ritik#1677
+to add to this, once the collateral is transferred, after reconfirmation that there indeed was something wrong, the collateral that was transferred would then be redistributed amongst the lenders of the loan proportionately
+
+
+[03/30/2022 6:16 AM] hickuphh3
+ok got it, thanks!
+
+
+[03/30/2022 5:30 PM] 0xdjango
+Hi Sublime team, what would be a good general value for idealCollateralRatio?
+
+
+[03/31/2022 1:07 PM] Ritik#1677
+hey, sorry, I missed this. idealCollateralRatio is (ideally) supposed to work for all general values, starting from 0
+
+
+[03/31/2022 1:08 PM] 0xdjango
+Got it, thanks
+
+
+[03/31/2022 6:14 PM] remora0
+@Ritik | Sublime DMed my query
+
+{Reactions}
+👍 
+
+[04/01/2022 12:02 AM] C4
+**🚨 CONTEST ALERT**
+
+@🐺wardens The **Sublime** contest is now closed! Huge thanks to everyone who participated🔍, whether you submitted a finding or not.
+
+What's next: the Sublime team will review the findings over the next couple of days, and then we'll pass them off to the judge. Keep an eye on #📢announcements for regular updates on how the contest is progressing through awarding 🤑🏆, judging 🧑‍⚖️ and reporting 📜. Feel free to ping a gardener if you have questions along the way!
+
+
+==============================================================
+Exported 24 message(s)
+==============================================================
